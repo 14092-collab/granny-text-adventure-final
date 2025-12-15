@@ -1,0 +1,45 @@
+print("You wake up in a dark house.")
+print("The door is locked. You hear Granny near.")
+health = 10
+has_key = False
+noise = 0
+choice = input("Do you SEARCH the room or HIDE? ").lower()
+if choice == "search":
+  print("You search the room.")
+has_key = True
+noise += 2
+if choice == "hide":
+  print("You hide under the bed.")
+else:
+  print("You stand still.")
+noise += 1
+if noise > 1:
+  print("Granny heard you.")
+else:
+  print("It stays quiet.")
+print("You see a door to the hallway.")
+action = input("Do you OPEN the door or WAIT? ").lower()
+if action == "open" and has_key:
+  print("You unlock the door quietly.")
+elif action == "open":
+  print("The door makes noise.")
+else:
+  print("You wait and listen.")
+print("Granny comes in the hallway.")
+move = input("Do you RUN or HIDE? ").lower()
+if move == "run":
+  print("You run toward the exit.")
+  health -= 2
+elif move == "hide":
+  print("You go hide in a closet.")
+else:
+  print("You panic.")
+  health -= 3
+print("Your health is:", health)
+if health > 5:
+  print("You escape the house.")
+elif health > 0:
+  print("You escape, but barely.")
+else:
+  print("Granny catches you.")
+print("Game over.")
